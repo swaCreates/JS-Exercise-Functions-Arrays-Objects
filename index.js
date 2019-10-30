@@ -37,9 +37,16 @@ function exampleFunction(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  const person= {
+    id: id,
+    name: name,
+    email: email
+  }
+  return person;
 }
+
+makePersonObject(21, 'Frenchie', 'Frenchie21@email.com');
 
 /**
  * ### Challenge `getName`
@@ -54,9 +61,15 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+function getName(person) {
   /* code here */
+  return `Hello, my name is ${person.name}`;
 }
+getName({
+  id: 21,
+  name: 'Frenchie',
+  email: 'frenchie21@email.com',
+});
 
 /**
  * ### Challenge `makeSmartPerson`
