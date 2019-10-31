@@ -166,6 +166,16 @@ function getCarInfoById(arr, num) {
 */
 function sortCarInventory(arr) {
   /* code here */
+  arr.sort((a, b) => {
+    if(a.car_model < b.car_model){
+      return -1;
+    } else if(a.car_model > b.car_model){
+      return 1;
+    } else{
+      return 0;
+    }
+  })
+  return arr;
 }
 
 /**
