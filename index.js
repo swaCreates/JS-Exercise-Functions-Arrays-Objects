@@ -84,9 +84,20 @@ getName({
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(person) {
   /* code here */
+  const smartPerson= {
+    name: person,
+    sum: (num1, num2) => {
+      return `${num1} ${num2}`;
+    },
+    speak: () => {
+      return `Hello my name is ${person.name}`;
+    }
+  }
+  return smartPerson;
 }
+makeSmartPerson('frenchie');
 
 /**
  * ### Challenge `getCarInfoByIndex`
