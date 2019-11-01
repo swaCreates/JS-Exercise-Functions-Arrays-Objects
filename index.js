@@ -191,8 +191,12 @@ function getModelYears(arr) {
   /* code here */
   const finalArr= [];
   for(let i= 0; i < arr.length; i++){
-    console.log(arr[i].car_year);
+    finalArr.push(arr[i].car_year);
+    
+    // return arr[i].car_year;
   }
+  return finalArr;
+
 }
 
 /**
