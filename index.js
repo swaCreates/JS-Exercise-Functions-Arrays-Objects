@@ -37,9 +37,16 @@ function exampleFunction(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  const person= {
+    id: id,
+    name: name,
+    email: email
+  }
+  return person;
 }
+
+makePersonObject(21, 'Frenchie', 'Frenchie21@email.com');
 
 /**
  * ### Challenge `getName`
@@ -54,9 +61,15 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+function getName(person) {
   /* code here */
+  return `Hello, my name is ${person.name}`;
 }
+getName({
+  id: 21,
+  name: 'Frenchie',
+  email: 'frenchie21@email.com',
+});
 
 /**
  * ### Challenge `makeSmartPerson`
@@ -71,9 +84,20 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(person) {
   /* code here */
+  const smartPerson= {
+    name: person,
+    sum: (num1, num2) => {
+      return num1 + num2;
+    },
+    speak: () => {
+      return `Hello, my name is ${person}`;
+    }
+  }
+  return smartPerson;
 }
+makeSmartPerson('frenchie');
 
 /**
  * ### Challenge `getCarInfoByIndex`
@@ -87,9 +111,13 @@ function makeSmartPerson(/* code here */) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(/* code here */) {
+function getCarInfoByIndex(arr, num) {
   /* code here */
+  
+  return `This is a ${arr[num].car_make} ${arr[num].car_model}`;
+    
 }
+
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -102,8 +130,9 @@ function getCarInfoByIndex(/* code here */) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
+function getLastCarInfo(arr) {
   /* code here */
+  return `This is a ${arr[arr.length -1].car_make} ${arr[arr.length -1].car_model}`;
 }
 
 /**
@@ -118,8 +147,13 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
+function getCarInfoById(arr, num) {
   /* code here */
+   for(let i= 0; i < arr.length; i++){
+    if(arr[i].id === num){
+      return `This is a ${arr[i].car_make} ${arr[i].car_model}`;
+    }
+  }
 }
 
 /**
@@ -130,8 +164,18 @@ function getCarInfoById(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
+function sortCarInventory(arr) {
   /* code here */
+  arr.sort((a, b) => {
+    if(a.car_model < b.car_model){
+      return -1;
+    } else if(a.car_model > b.car_model){
+      return 1;
+    } else{
+      return 0;
+    }
+  })
+  return arr;
 }
 
 /**
@@ -143,8 +187,16 @@ function sortCarInventory(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
+function getModelYears(arr) {
   /* code here */
+  const finalArr= [];
+  for(let i= 0; i < arr.length; i++){
+    finalArr.push(arr[i].car_year);
+    
+    // return arr[i].car_year;
+  }
+  return finalArr;
+
 }
 
 /**
@@ -159,8 +211,16 @@ function getModelYears(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
+function getOlderCars(arr, num){
   /* code here */
+  const finalArr= [];
+  for(let i= 0; i < arr.length; i++){
+    if(arr[i].car_yeah > num){
+
+    }
+  }
+
+
 }
 
 /**
